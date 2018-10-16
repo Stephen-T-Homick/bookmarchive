@@ -11,13 +11,13 @@ import json
 import sys
 from json2html import *
 
-try:
-    bookmarkPath = '/home/shomick/projects/bookmarchive/bookmarks.json'
-    with open(bookmarkPath) as jsonlocal:
-        dictdump = json.loads(jsonlocal.read())
-        print(dictdump)
-except FileNotFoundError or json.JSONDecodeError:
-        print("Improper JSON / File doesn't exist.")
+
+bookmarkPath = '/home/shomick/projects/bookmarchive/Bookmarks.json'
+with open('/home/shomick/projects/bookmarchive/Bookmarks.json') as jsonfile:
+    parsed = json.load(jsonfile)    
+    json2html.convert(json = parsed)
+    print(json.dumps(parsed,indent=2,sort_keys=True)) #Print pretty JSON
+    print(json2html.convert(json = parsed)) #Print json -> html 
 
     
 
