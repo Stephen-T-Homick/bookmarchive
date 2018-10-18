@@ -17,11 +17,12 @@ bookmarkPath = '/home/shomick/projects/bookmarchive/Bookmarks.json'
 with open('/home/shomick/projects/bookmarchive/Bookmarks.json') as jsonfile:
     parsed = json.load(jsonfile)    
     html_doc = json2html.convert(json = parsed)
-    #print(json.dumps(parsed,indent=2,sort_keys=True)) #Print pretty JSON
-    #print(json2html.convert(json = parsed)) #Print json -> html 
-    soup = BeautifulSoup(html_doc, 'html.parser')
-    print(soup.prettify())
-    
+   ###print(json.dumps(parsed,indent=2,sort_keys=True)) #Print pretty JSON###
+    ###print(json2html.convert(json = parsed)) #Print json -> html ###
+    soup = BeautifulSoup(html_doc, 'html.parser') 
+    print(soup.prettify()) #Unit tester
+    # for link in soup.find_all('*'):
+    #     print(link.get('https'))
     
 
 
